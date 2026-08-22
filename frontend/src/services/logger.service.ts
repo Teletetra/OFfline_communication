@@ -1,0 +1,1 @@
+export const logger={debug:(...args:unknown[])=>{if(import.meta.env.DEV)console.debug('[app]',...args);},info:(...args:unknown[])=>console.info('[app]',...args),warn:(...args:unknown[])=>console.warn('[app]',...args),error:(...args:unknown[])=>console.error('[app]',...args)};
