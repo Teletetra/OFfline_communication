@@ -1,0 +1,3 @@
+import {create} from 'zustand';
+export interface BluetoothState{supported:boolean;connected:boolean;deviceName:string|null;mode:boolean;setSupported:(v:boolean)=>void;setConnected:(v:boolean,name?:string)=>void;setMode:(v:boolean)=>void;reset:()=>void;}
+export const useBluetoothStore=create<BluetoothState>((set)=>({supported:typeof navigator!=='undefined'&&'bluetooth' in navigator,connected:false,deviceName:null,mode:false,setSupported:(supported)=>set({supported}),setConnected:(connected,deviceName)=>set({connected,deviceName:deviceName||null}),setMode:(mode)=>set({mode}),reset:()=>set({connected:false,deviceName:null,mode:false})}));
