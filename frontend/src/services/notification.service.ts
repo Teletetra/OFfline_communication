@@ -1,0 +1,1 @@
+export const notificationService={supported:()=>typeof Notification!=='undefined',requestPermission:async()=>typeof Notification==='undefined'?'unsupported':await Notification.requestPermission(),show:(title:string,body:string)=>{if(typeof Notification!=='undefined'&&Notification.permission==='granted')return new Notification(title,{body});return null;}};
