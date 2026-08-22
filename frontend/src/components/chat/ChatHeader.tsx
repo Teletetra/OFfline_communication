@@ -1,0 +1,3 @@
+import React from 'react';
+import './ChatHeader.css';
+const ChatHeader:React.FC<{conversation?:any;connectionStatus:string}>=({conversation,connectionStatus})=>{if(!conversation)return null;const user=conversation.participant1?.id===conversation.participant2Id?conversation.participant1:conversation.participant2;return <header className="chat-header"><div className="avatar">{(user?.username||'U').charAt(0).toUpperCase()}</div><div><strong>{user?.username||'Conversation'}</strong><small>{user?.isOnline?'Online':connectionStatus==='connected'?'Connected':'Offline'}</small></div></header>;};export default ChatHeader;
