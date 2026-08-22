@@ -1,0 +1,2 @@
+export interface PaginationQuery { page?: number; limit?: number; cursor?: string; }
+export interface PaginatedResult<T> { items: T[]; page: number; limit: number; total?: number; hasNext: boolean; nextCursor?: string; }

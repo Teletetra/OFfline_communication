@@ -1,0 +1,2 @@
+import { BadRequestException, PipeTransform } from '@nestjs/common';
+export class ParseObjectIdPipe implements PipeTransform { transform(value:string){ if(!value || value.length<3) throw new BadRequestException('Invalid id'); return value; } }
