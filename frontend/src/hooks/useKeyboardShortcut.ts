@@ -1,0 +1,2 @@
+import {useEffect} from 'react';
+export const useKeyboardShortcut=(key:string,handler:(e:KeyboardEvent)=>void,options:{ctrl?:boolean;meta?:boolean;shift?:boolean}={})=>{useEffect(()=>{const on=(e:KeyboardEvent)=>{if(e.key.toLowerCase()!==key.toLowerCase())return;if(options.ctrl&&!e.ctrlKey)return;if(options.meta&&!e.metaKey)return;if(options.shift&&!e.shiftKey)return;handler(e);};window.addEventListener('keydown',on);return()=>window.removeEventListener('keydown',on);},[key,handler,options.ctrl,options.meta,options.shift]);};
