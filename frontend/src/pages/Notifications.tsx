@@ -1,0 +1,1 @@
+import React from 'react';import{useNotificationStore}from'../store/notificationStore';export default function Notifications(){const s=useNotificationStore();return <main className="simple-page"><h1>Notifications</h1><p>Browser permission: {s.permission}</p><button onClick={()=>void s.requestPermission()}>Request permission</button></main>}
