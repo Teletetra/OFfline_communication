@@ -1,0 +1,3 @@
+import { Body, Controller, Get, Param, Patch, Query } from '@nestjs/common';
+import { UsersService } from './users.service'; import { CurrentUser } from '../common/decorators/current-user.decorator'; import { UpdateProfileDto } from './dto/update-profile.dto';
+@Controller('users') export class UsersController { constructor(private readonly users:UsersService){} @Get('search') search(@Query('q') q=''){return this.users.search(q);} @Get(':id') get(@Param('id') id:string){return this.users.findById(id);} @Patch('me') updateMe(@CurrentUser() user:any,@Body() dto:UpdateProfileDto){return this.users.updateProfile(user.id,dto);} }
