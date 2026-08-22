@@ -1,0 +1,1 @@
+import { IsIn } from 'class-validator'; export class UpdateMessageDto { @IsIn(['sent','delivered','read','failed']) status!:string; }

@@ -1,0 +1,1 @@
+import { IsIn, IsOptional, IsString, IsUUID } from 'class-validator'; export class SendMessageDto { @IsUUID() receiverId!:string; @IsOptional() @IsUUID() conversationId?:string; @IsString() content!:string; @IsOptional() @IsIn(['text','image','file','voice','video']) type?:string; @IsOptional() @IsIn(['online','bluetooth','hybrid']) transmissionMode?:string; }
