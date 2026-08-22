@@ -1,0 +1,1 @@
+import React from 'react';import{Navigate}from'react-router-dom';import{useAuthStore}from'../store/authStore';export default function PublicRoute({children}:{children:React.ReactNode}){const authenticated=useAuthStore(s=>s.isAuthenticated);return authenticated?<Navigate to="/chat" replace/>:<>{children}</>;}
