@@ -1,0 +1,3 @@
+import React, { useEffect, useState } from 'react';
+const OfflineIndicator: React.FC = () => { const [online, setOnline] = useState(navigator.onLine); useEffect(() => { const on = () => setOnline(true); const off = () => setOnline(false); window.addEventListener('online', on); window.addEventListener('offline', off); return () => { window.removeEventListener('online', on); window.removeEventListener('offline', off); }; }, []); return !online ? <div style={{ position:'fixed', top:0, left:0, right:0, zIndex:1000, textAlign:'center', padding:6, background:'#222', color:'#fff', fontSize:12 }}>You are offline — messages will use available fallback delivery.</div> : null; };
+export default OfflineIndicator;
