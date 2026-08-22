@@ -1,0 +1,1 @@
+import React from 'react';import{useAuthStore}from'../store/authStore';export default function Security(){const logout=useAuthStore(s=>s.logout);return <main className="simple-page"><h1>Security</h1><p>Use a strong unique password and keep browser/device access protected.</p><button onClick={logout}>Sign out this device</button></main>}
