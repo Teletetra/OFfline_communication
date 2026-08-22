@@ -1,0 +1,1 @@
+import React from 'react';import MessageBubble from './MessageBubble';export default function MessageThread({messages=[],currentUserId}:{messages?:any[];currentUserId:string}){return <div className="message-thread">{messages.map(m=><MessageBubble key={m.id} message={m} isOwnMessage={m.senderId===currentUserId}/>)}</div>}
