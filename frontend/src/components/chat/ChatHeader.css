@@ -1,0 +1,1 @@
+.chat-header{display:flex;align-items:center;gap:12px;padding:14px 18px;background:#fff;border-bottom:1px solid #e6e8ee}.chat-header .avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#eef1f7;font-weight:700}.chat-header div:last-child{display:flex;flex-direction:column;gap:2px}.chat-header small{color:#737987}
