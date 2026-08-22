@@ -1,0 +1,2 @@
+import {apiService} from './api.service';
+export const authService={login:(email:string,password:string)=>apiService.post('/auth/login',{email,password}),register:(username:string,email:string,password:string)=>apiService.post('/auth/register',{username,email,password}),me:()=>apiService.get('/auth/me'),logout:()=>apiService.post('/auth/logout',{}),forgotPassword:(email:string)=>apiService.post('/auth/forgot-password',{email}),resetPassword:(token:string,newPassword:string)=>apiService.post('/auth/reset-password',{token,newPassword})};
