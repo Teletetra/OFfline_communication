@@ -1,0 +1,2 @@
+import {useCallback,useState} from 'react';
+export const useLocalStorage=<T,>(key:string,initial:T)=>{const [value,setValue]=useState<T>(()=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):initial;}catch{return initial;}});const update=useCallback((next:T|((v:T)=>T))=>{setValue(prev=>{const value=typeof next==='function'?(next as (v:T)=>T)(prev):next;try{localStorage.setItem(key,JSON.stringify(value));}catch{}return value;});},[key]);return [value,update] as const;};
