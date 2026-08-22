@@ -1,0 +1,1 @@
+import React from 'react';export default function TypingIndicator({typing=false,name='Someone'}:{typing?:boolean;name?:string}){return typing?<div className="typing-indicator">{name} is typing…</div>:null}
