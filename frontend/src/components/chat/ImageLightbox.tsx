@@ -1,0 +1,1 @@
+import React from 'react';export default function ImageLightbox({src,alt='Image',onClose}:{src:string;alt?:string;onClose:()=>void}){return <div role="dialog" aria-modal="true" className="image-lightbox" onClick={onClose}><img src={src} alt={alt} onClick={e=>e.stopPropagation()}/><button type="button" onClick={onClose}>Close</button></div>}
