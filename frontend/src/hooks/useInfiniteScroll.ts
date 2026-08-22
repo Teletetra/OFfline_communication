@@ -1,0 +1,2 @@
+import {useEffect} from 'react';
+export const useInfiniteScroll=(loadMore:()=>void|Promise<void>,hasMore:boolean,root?:HTMLElement|null)=>{useEffect(()=>{const target=root||window;const on=()=>{const top='scrollY' in window?window.scrollY:0;const height='innerHeight' in window?window.innerHeight:0;const total=document.documentElement.scrollHeight;if(top+height>=total-240&&hasMore)void loadMore();};target.addEventListener('scroll',on);return()=>target.removeEventListener('scroll',on);},[loadMore,hasMore,root]);};
